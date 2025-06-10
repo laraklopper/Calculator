@@ -1,2 +1,5 @@
 # Calculator
 REACT CALCULATOR
+
+## TABLE OF CONTENTS
+
