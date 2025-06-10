@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+/*BODY*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  background-color: slategrey;
+  overflow: visible;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-size: cover;
+  background-color: slategrey;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: visible;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
+  margin: 0px;
+  width: 100%;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: slategrey;
+  align-items: stretch;
+  height: fit-content;
+  overflow: visible;
+}
+#container{
+  background: linear-gradient(to top right, #ffcc00 47%, #daa502 83%);
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 15px;
+  border: #4b2303 solid 5px;
+}
+/* HEADER */
+#header{
+  background-color: #fd7e14;
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+}
+/* Layout */
+.headCol {
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  padding: 10px;
+}
+/* Text */
+#heading {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Volkhov", serif;
 }
 
-.App-link {
-  color: #61dafb;
+/* SECTION 1 */
+#section1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #9d7b16;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 5px solid black;
+  border-radius: 10px;
+}
+/* Layout */
+.toggleRow{
+  display: flex;
+  justify-content: center;
+}
+.toggleCol{
+  display: flex;
+  justify-content: center;
+}
+/* Input */
+.input {
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  margin: 0px;
+  font-weight: 800;
+  font-family: "Noto Sans", sans-serif;
+}
+/* Button */
+#toggleBtn{
+  font-family: "Lato", sans-serif;
+    color: whitesmoke;
+    width: 200px;
+    padding: 5px 10px 5px 10px;
+    font-weight: 700;
+    border: solid black 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
