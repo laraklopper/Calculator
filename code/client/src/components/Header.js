@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react'// Import the React module to use React functionalities
 // Bootstrap
 import Row from 'react-bootstrap/Row';//Import the bootstrap Row component
 import Col from 'react-bootstrap/Col';//Import the bootstrap Col component
