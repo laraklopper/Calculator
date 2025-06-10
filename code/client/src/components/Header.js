@@ -1,9 +1,12 @@
 import React from 'react'
-import Row from 'react-bootstrap/Row';//import the bootstrap Row component
+// Bootstrap
+import Row from 'react-bootstrap/Row';//Import the bootstrap Row component
 import Col from 'react-bootstrap/Col';//Import the bootstrap Col component
 
-export default function Header() {
+//Header function component
+export default function Header() {//Export default Header component
 
+  //================JSX RENDERING==========
     return (
     <header id='header'>
           <Row className='headRow'>
