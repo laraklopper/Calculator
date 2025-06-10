@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';// Import Bootstrap Button component
-import Row from 'react-bootstrap/Row';//import the bootstrap Row component
-import Col from 'react-bootstrap/Col';//Import the bootstrap Col component
+import React, { useState } from 'react'// Import the React module to use React functionalities
+// Bootstrap
+import Button from 'react-bootstrap/Button'; // Import Bootstrap Button component
+import Row from 'react-bootstrap/Row';       // Import Bootstrap Row layout
+import Col from 'react-bootstrap/Col';       // Import Bootstrap Column layout
 
-export default function Calculator() {
-    const [principal, setPrincipal] = useState(0);//Stores the interest rate
-    const [interestRate, setInterestRate] = useState(0); // Stores the interest rate
-    const [timePeriod, setTimePeriod] = useState(0); // Stores the time period
+//Calculator function component
+export default function Calculator() {//Export default calculator function component
+    //===========STATE VARIABLES==========
+    const [principal, setPrincipal] = useState(0);//State to store the interest rate
+    const [interestRate, setInterestRate] = useState(0); // State  used to store the interest rate
+    const [timePeriod, setTimePeriod] = useState(0); // State used to store the time period
     const [totalInterest, setTotalInterest] = useState(0); // Stores the calculated total interest
   
 
+    //=========EVENT LISTENERS==================
     // Event handler for principal input change
     function handlePrincipalChange(event) {
         setPrincipal(event.target.value);
@@ -31,87 +35,100 @@ export default function Calculator() {
         setTotalInterest(interest); // Update the totalInterest state with the calculated interest
     }
 
-    return (
-        <div>
-    <div id='calculator'>
-            <Row className='labelRow'>
-                {/* Input for principal amount */}
-                <Col className='labelCol'>
-                    <label className='calculatorLabel'>
-                        <p className='labelText'>AMOUNT:</p><p className='para2'>R</p>
-                    <input 
-                    type='number' 
-                    aria-label=''
-                    className='input' 
-                    placeholder='0' 
-                    value={principal} 
-                    onChange={handlePrincipalChange} 
-                        step='0.01'
-                    />                      
-                    </label>
-            </Col>              
-            </Row>
-            <Row className='labelRow'>
-                <Col className='labelCol'>
-                    <label className='calculatorLabel'>
-                        <p className='labelText'>INTEREST:</p>
-                    {/* Input for Interest rate */}
-                    <input
-                    placeholder='0'
-                        step='0.01'
-                    type='number' 
-                    className='input' 
-                    value={interestRate} 
-                    onChange={handleInterestRateChange} 
-                        />
-                        </label>
-                </Col>
-              
-            </Row>
-                <Row className='labelRow'>
-                <Col className='labelCol' >
-                    {/* Input for the time period in months*/}
-                    <label htmlFor='timeInput' className='calculatorLabel'>
-                        <p className='labelText'>TIME:</p>
-                    <input 
-                    type='number' 
-                        step='0.01'
-                    id='timeInput'
-                    className='input' 
-                    value={timePeriod} 
-                    onChange={handleTimePeriodChange} 
-                    aria-label='time input'
-                    />
-                    <p className='labelText'>Months</p>
-                    </label>
-                </Col>              
-            </Row>
-            <Row className='labelRow'>
-                <Col id='buttonCol'>
-                    <Button 
-                    onClick={calculateInterest} 
-                    id='calBtn' 
-                    variant='success' 
-                    type='button'
-                    aria-label='Calculate interest'
-                    >
-                        CALCULATE INTEREST
-                        </Button>
-                </Col>
-            </Row>
-            </div>
-            <div id='interestOutput'>
-            <Row>
-                <Col className='interestCol'>
-                    <div id='totalInterest'>
-                        <h6 className='interest'>INTEREST:</h6>
-                            <h6 className='interest'><strong>R</strong></h6>
-                            <h6 className='interest'> {totalInterest}</h6>
-                        </div>
-                </Col>
+    // ===================JSX RENDERING==========================
 
-            </Row>
-    </div>
-    </div>
-  )
-}
+    return (
+        <div id='calculatorDisplay'>
+            {/* Calculator */}
+            <div id='calculator'>          
+                {/* Principal Amount */}
+                <Row className='labelRow'>
+                    <Col className='labelCol'>
+                        <label className='calculatorLabel' htmlFor='amountInput'>
+                            <p className='labelText'>AMOUNT:</p>
+                            <p className='para2'>R</p>
+                            {/* Principal Amount input field */}
+                            <input
+                                id='amountInput'
+                                type='number'
+                                className='input'
+                                autoComplete='off'
+                                placeholder='0'
+                                value={principal}
+                                onChange={handlePrincipalChange}
+                                step='0.01'
+                                aria-label='principal amount input'
+                            />
+                        </label>
+                    </Col>
+                </Row>
+                {/* Interest Rate*/}
+                <Row className='labelRow'>
+                    <Col className='labelCol'>
+                        <label className='calculatorLabel' htmlFor='interestRateInput'>
+                            <p className='labelText'>INTEREST:</p>
+                            {/* Interest Rate input */}
+                            <input
+                                type='number'
+                                id='interestRateInput'
+                                className='input'
+                                autoComplete='off'
+                                placeholder='0'
+                                value={interestRate}
+                                onChange={handleInterestRateChange}
+                                step='0.01'
+                                aria-label='Interest Rate Input'
+                            />
+                        </label>
+                    </Col>
+                </Row>
+                {/* Time Period*/}
+                <Row className='labelRow'>
+                    <Col className='labelCol'>
+                        <label htmlFor='timeInput' className='calculatorLabel'>
+                            <p className='labelText'>TIME:</p>
+                            {/* Time Period Input */}
+                            <input
+                                type='number'
+                                autoComplete='off'
+                                className='input'
+                                id='timeInput'
+                                value={timePeriod}
+                                onChange={handleTimePeriodChange}
+                                step='0.01'
+                                aria-label='Time input'
+                            />
+                            <p className='labelText'>Months</p>
+                        </label>
+                    </Col>
+                </Row>
+                {/* Button to trigger calculation */}
+                <Row className='labelRow'>
+                    <Col id='buttonCol'>
+                        <Button
+                            id='calBtn'
+                            variant='success'
+                            type='button'
+                            onClick={calculateInterest}
+                            aria-label='Calculate interest'
+                        >
+                            CALCULATE INTEREST
+                        </Button>
+                    </Col>
+                </Row>
+            </div>
+            {/* Output display for calculated interest in Rand*/}
+            <div id='interestOutput'>
+                <Row>
+                    <Col className='interestCol'>
+                        <div id='totalInterest'>
+                            <h6 className='interest'>INTEREST:</h6>
+                            <h6 className='interest'><strong>R</strong></h6>
+                            <h6 className='interest'>{totalInterest}</h6>
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+        </div>
+    )
+    }
