@@ -17,11 +17,11 @@ npx create-react-app@latest client
 ```
 ## HOW TO START THE APPLICATION
 
-The application can be started in the `command line interface/terminal` using `npm start`.
+Both calculator applications can be started in the `command line interface/terminal` using `npm start`.
 
 ## CSS STYLING
 
-The application uses CSS `cascading stylesheets` together with bootstrap and google fonts.
+The applications use CSS `cascading stylesheets` together with bootstrap and google fonts for styling purposes.
 
 ### BOOTSTRAP
 
@@ -31,7 +31,6 @@ The application uses CSS `cascading stylesheets` together with bootstrap and goo
 ```
 npm install react-bootstrap bootstrap
 ```
-
 `index.js`
 ```
 import 'bootstrap/dist/css/bootstrap.min.css';
