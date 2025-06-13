@@ -1,0 +1,91 @@
+html, body{
+  margin: 0;
+    padding: 0;
+    display: grid;
+    background-color: slategrey;
+    overflow: visible;
+}
+#root{
+  margin: 0px;
+    padding: 10px;
+    display: grid;
+    background-color: slategrey;
+    overflow: visible;
+    
+}
+/* HEADER */
+#header{
+  margin:10px 0px 2px 0px;
+}
+#headCol{
+  margin: 0px;
+    padding: 0px;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+#heading{
+  text-align: center;
+  font-family: "Orbitron", sans-serif;  
+  font-weight: 900;
+}
+.container{
+  margin: 0;
+    padding: 0;
+    display: grid;
+    background-color: slategrey;
+    overflow: visible;
+}
+/* Section 1 */
+#section1{
+  display: flex;
+    justify-content: center;
+    margin: 10px 0px 10px 0px;
+}
+/* CALCULATOR */
+#calculator{
+  box-shadow: 0px 10px 13px -7px #000000, -3px 1px 13px 11px #05040478;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    justify-content: center;
+    background-color: silver;
+    border: solid black 3px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0px 10px 0px;
+}
+#calculatorOutput{
+  padding: 10px;
+  border: solid black 2px;
+  background-color: grey;
+  border-radius: 10px;
+  margin: 10px 15px 10px 15px;
+  box-shadow: 0px 10px 13px -7px #000000, -3px 1px 13px 11px #05040478;
+}
+/* OUTPUT */
+.input{
+  padding: 5px 10px 5px 10px;
+    text-align: center;
+    font-size: 18px;
+      font-weight: 600;
+    border-radius: 5px;
+    border: solid;
+    font-family: "Zen Dots", sans-serif;
+    color: black;
+      height: 45px;
+}
+/* RESULT */
+#result{
+  padding: 10px 0px 0px 10px;
+  background-color: #6c757d;
+  border: solid black;
+    margin: 5px 0px 5px 0px;
+
+}
+#outputText{
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 900;
+}
+
+
