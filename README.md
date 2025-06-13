@@ -1,4 +1,4 @@
-# FRONT END INTEREST CALCULATOR
+# FRONT END CALCULATOR
 
 ## TABLE OF CONTENTS
 1. [WHAT_DOES_THE_APPLICATION_DO](#what-does-the-application-do)
@@ -8,7 +8,7 @@
 
 ## WHAT DOES THE APPLICATION DO
 
-The application is an frontend interest calculator using react.js
+The application is an frontend interest rate calculator and a normal calculator using react.js.
 
 `command line interface`/`terminal`
 
