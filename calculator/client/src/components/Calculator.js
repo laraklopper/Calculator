@@ -1,29 +1,32 @@
 import React, { useState } from 'react'
+import './css/buttons.css'
+//Bootstrap
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './css/buttons.css'
 import Stack from 'react-bootstrap/Stack';
+
+//Calculator function component
 export default function Calculator() {
+    //========STATE VARIABLES====================
     const [input, setInput] = useState('')
     const [result, setResult] = useState('')
-    //=========================================
+    //===========EVENT LISTENERS==============================
 
-    //Handle number or operator input
+    //Function to handle number or operator input
     const handleClick = (value) => {
         setInput((prev) => prev + value)
     }
 
-    // Clear input and result
+    // Function to  clear input and result
     const handleClear = () => {
         setInput('');
         setResult('');
     };
 
-    // Calculate the result
+    // Function to calculate the result
     const handleEquals = () => {
         try {
-            // Use eval carefully; only works for trusted input
-            const evalResult = eval(input); // eslint-disable-line no-eval
+            const evalResult = eval(input); 
             setResult(evalResult);
         } catch (error) {
             setResult('Error');
@@ -35,7 +38,7 @@ export default function Calculator() {
     <div id='calculator'>
         {/* Output */}
         <div id='calculatorOutput'>
-              <Row>
+              <Row id='headerRow'>
                   <Col>
                   <input type='text' aria-label='output' value={input} placeholder='0' readOnly className='input'/>
                       <div id='result'><h4 id='outputText'>={result}</h4></div>
@@ -45,9 +48,10 @@ export default function Calculator() {
         {/* Buttons */}
        <div className='buttons'>
         <Row id='btnRow1'>
+           {/*Bootstrap Stack for button layout*/}
                   <Stack id='buttonsStack' gap={3}>
                       <div id="line1">
-                        <button type='button' className='button' onClick={() => handleClick('7')}>7</button>
+                        <button type='button'  className='button' onClick={() => handleClick('7')}>7</button>
                           <button type='button' className='button' onClick={() => handleClick('8')}>8</button>
                           <button type='button' className='button' onClick={() => handleClick('9')}>9</button>
                           <button type='button' className='button' onClick={() => handleClick('/')}>/</button>
@@ -65,7 +69,7 @@ export default function Calculator() {
                           <button type='button' className='button' onClick={() => handleClick('+')}>+</button>
                           </div>
                       <div id='line4'>                      
-                        <button type='clear' className='clearBtn' onClick={handleClear}>C</button>
+                        <button type='clear' aria-label='Button to clear input' className='clearBtn' onClick={handleClear}>C</button>
                       </div>
                   </Stack>            
         </Row>
