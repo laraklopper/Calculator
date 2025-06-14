@@ -13,12 +13,7 @@ export default function Calculator() {
     const [input, setInput] = useState('') //State used to store current expression
     const [result, setResult] = useState('')// State used to store result of evaluation
     const [liveMessage, setLiveMessage] = useState('')// State used for screen reader feedback
-
-    const inputRef = useRef(null)// Ref for focusing 
-
-    //===============EVENT LISTENERS==========================
-
-    //Function to handle number or operator input
+ to handle number or operator input
     const handleClick = (value, label) => {
         setInput((prev) => prev + value);
       setLiveMessage(`${label} pressed`);
@@ -39,7 +34,7 @@ export default function Calculator() {
     };
 
   // Function to calculate the result using mathjs
-  const handleEquals = () => {
+  const handleEquals = useCallback(() => {
     try {
       const evalResult = evaluate(input); // Safely evaluates math expression
       setResult(evalResult);
@@ -48,7 +43,12 @@ export default function Calculator() {
       setResult('Error');
       setLiveMessage('Invalid expression');
     }
-  };
+    const inputRef = useRef(null)// Ref for focusing 
+
+    //===============EVENT LISTENERS==========================
+
+    //Function
+  },[input]);
 
 
     //======================================
